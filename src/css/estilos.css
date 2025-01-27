@@ -1,0 +1,218 @@
+body {
+    font-family: 'Yugioh', serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 30px;
+
+}
+
+.cabecalho {
+    color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    padding-right: 125px;
+}
+
+.ativar-som {
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    width: 271px;
+    height: 45px;
+    border-radius: 50px;
+    border: 0;
+    padding: 8px 36px;
+    bottom: 170px;
+    right: 864px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.ativar-som:hover {
+    background-color: rosybrown;
+}
+
+
+.cartao {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    position: absolute;
+}
+
+.cartao.selecionado {
+    opacity: 1;
+    z-index: 1;
+}
+
+.lista-personagens {
+    width: 300px;
+    height: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+}
+
+.cartao .nome {
+    font-size: 13px;
+    padding: 5px;
+    text-transform: uppercase;
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.cartao .estrela {
+    width: 23px;
+    height: 26px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.cartao .nivel {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.cartao .imagem-carta {
+    max-width: 260px;
+    align-self: center;
+}
+
+.cartao-1 .informacoes {
+    border-radius: 5px;
+    max-width: 300px;
+    color: black;
+    text-align: left;
+    line-height: 1.5;
+    border: 2px solid black;
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+}
+
+.cartao .informacoes .informacoes-ataque {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 10px;
+}
+
+.cartao .informacoes .informacoes-ataque span {
+    font-size: 13px;
+}
+
+.cartao .informacoes .descricao {
+    border-bottom: 1px solid black;
+    padding: 10px;
+    max-height: 95px;
+    font-size: 13px;
+    overflow-y: scroll;
+}
+
+.fundo-1 {
+    gap: 3px;
+    background: url(../imagens/fundo-1.jpg) no-repeat;
+    border: 2px solid black;
+}
+
+.fundo-2 {
+    gap: 3px;
+    background: url(../imagens/fundo-2.png) no-repeat;
+    border: 2px solid white;
+}
+
+.fundo-3 {
+    gap: 3px;
+    background: url(../imagens/fundo-3.jpg) no-repeat;
+    border: 2px solid goldenrod;
+}
+
+.fundo-4 {
+    gap: 3px;
+    background: url(../imagens/fundo-4.jpg) no-repeat;
+    border: 2px solid white;
+}
+
+.fundo-5 {
+    gap: 3px;
+    background: url(../imagens/fundo-5.jpg) no-repeat;
+    border: 2px solid black;
+}
+
+.btn-seta {
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btn-seta:hover {
+    background-color: rosybrown;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+.carta-virada {
+    display: none;
+}
+
+.carta-virada.mostrar-fundo-carta {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../imagens/carta-virada.jpg);
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.cartao.virar {
+    transform: rotateZ(90deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.esconder {
+    display: none;
+}
